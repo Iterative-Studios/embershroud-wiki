@@ -1,0 +1,81 @@
+/* Embershroud wiki theme - echoes the marketing site: warm near-black, ember-orange accent,
+   gold serif display headings (Cinzel, matching the logo wordmark vibe). */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap');
+
+:root {
+	/* Ember-orange accent (buttons, links, active nav) */
+	--sl-color-accent-low: #4a1a0a;
+	--sl-color-accent: #e8763c;
+	--sl-color-accent-high: #f6c6a3;
+	/* Gold used for display headings / tagline */
+	--embershroud-gold: #d8b07a;
+	--embershroud-ember: #e8763c;
+}
+
+/* Dark is the Embershroud default look: warm near-black with a faint ember floor glow. */
+:root[data-theme='dark'] {
+	--sl-color-accent-low: #4a1a0a;
+	--sl-color-accent: #e8763c;
+	--sl-color-accent-high: #f6c6a3;
+	--sl-color-text-accent: #f08a4f;
+
+	--sl-color-white: #f5ece4;
+	--sl-color-gray-1: #ecddd0;
+	--sl-color-gray-2: #c9b6a7;
+	--sl-color-gray-3: #9c8676;
+	--sl-color-gray-4: #6c5a4d;
+	--sl-color-gray-5: #3f2f25;
+	--sl-color-gray-6: #271a13;
+	--sl-color-gray-7: #1b110c;
+
+	--sl-color-black: #0e0b0a;
+	--sl-color-bg: #0e0b0a;
+	--sl-color-bg-nav: #150f0c;
+	--sl-color-bg-sidebar: #120c09;
+	--sl-color-bg-inline-code: #221610;
+	--sl-color-hairline: #2c1d14;
+	--sl-color-hairline-shade: #1a110c;
+}
+
+/* Light theme keeps the ember accent so brand colour is consistent if a reader toggles. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #f6d8c4;
+	--sl-color-accent: #c2521d;
+	--sl-color-accent-high: #5a2306;
+	--sl-color-text-accent: #c2521d;
+}
+
+/* Faint warm ember glow toward the bottom, like the splash page. */
+:root[data-theme='dark'] body {
+	background-image: radial-gradient(120% 80% at 50% 120%, rgba(232, 118, 60, 0.10), transparent 60%);
+	background-attachment: fixed;
+}
+
+/* Fantasy serif display for the brand + page headings. */
+.site-title {
+	font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	color: var(--embershroud-gold);
+	text-transform: uppercase;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.content-panel h1,
+h1#_top {
+	font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+	letter-spacing: 0.02em;
+}
+
+/* Splash hero (home page): gold serif tagline like the site. */
+.hero h1 {
+	font-family: 'Cinzel', Georgia, serif;
+	color: var(--embershroud-gold);
+}
+.hero .tagline {
+	color: var(--embershroud-gold);
+	font-style: italic;
+}

@@ -1,0 +1,41 @@
+---
+title: Embershroud Wiki
+description: The official reference wiki for Embershroud - an idle/auto-combat ARPG where you build the machine and your character fights it out.
+template: splash
+hero:
+  tagline: Build the machine. Let it fight. The official Embershroud reference.
+  actions:
+    - text: Game systems
+      link: /systems/combat-basics/
+      icon: right-arrow
+    - text: How to contribute
+      link: /contribute/
+      icon: pencil
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Welcome to the official **Embershroud** wiki.
+
+## Browse the wiki
+
+<CardGrid>
+	<LinkCard title="Skills" href="/skills/" description="The 14 Core + Class skills you build your loadout from." />
+	<LinkCard title="Items" href="/items/" description="Weapons, armour, jewelry, Legendaries and consumables." />
+	<LinkCard title="Monsters" href="/monsters/" description="Enemies and bosses across the playtest zones." />
+	<LinkCard title="Zones" href="/zones/" description="The playtest zones and the Ascent." />
+	<LinkCard title="NPCs" href="/npcs/" description="Characters you meet in the world." />
+</CardGrid>
+
+The cards above are the auto-generated reference sections. For how-it-works guides (combat, classes,
+crafting, the Battle Plan), use the **Game systems** button at the top or the sidebar.
+
+## Two kinds of pages
+
+- **Reference pages** (Skills, Items, Monsters, Zones, NPCs) are **auto-generated from the live game data**, so their stats track the current build. Don't hand-edit the generated sections.
+- **Guides and systems pages** are written by the team and community - strategy, theorycraft, and explanations that come from playing.
+
+> Reference content reflects the current public playtest build. Numbers can change between patches; each page shows the build it was generated from.
+
+Spotted something wrong or want to add a guide? See **[how to contribute](/contribute/)**.
