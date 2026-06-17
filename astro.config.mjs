@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import rehypeGlossary from './src/lib/rehype-glossary.mjs';
 
 // Canonical domain. Override via WIKI_SITE in CI for preview deploys.
 const SITE = process.env.WIKI_SITE || 'https://wiki.embershroud.com';
@@ -9,6 +10,10 @@ const SITE = process.env.WIKI_SITE || 'https://wiki.embershroud.com';
 // https://astro.build/config
 export default defineConfig({
 	site: SITE,
+	// Glossary tooltips: wrap the first occurrence of known terms in a native <abbr> with a definition.
+	markdown: {
+		rehypePlugins: [rehypeGlossary],
+	},
 	integrations: [
 		sitemap(),
 		starlight({

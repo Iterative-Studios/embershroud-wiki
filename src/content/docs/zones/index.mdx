@@ -1,0 +1,18 @@
+---
+title: Zones
+description: All zones in Embershroud - sortable and filterable.
+---
+
+import EntityTable from '../../../components/EntityTable.astro';
+import zones from '../../../data/wiki/zones.json';
+
+Every playtest zone. Sort by recommended level to see the progression, or filter by region.
+
+<EntityTable
+	data={zones}
+	base="/zones/"
+	columns={[
+		{ key: 'recommendedLevel', label: 'Recommended level', numeric: true },
+		{ key: 'region', label: 'Region', filter: true },
+	]}
+/>

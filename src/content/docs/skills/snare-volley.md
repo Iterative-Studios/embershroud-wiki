@@ -4,7 +4,7 @@ description: "Skill - Zone"
 wiki:
   generated: true
   entityType: "skill"
-  lastUpdated: "2026-06-16"
+  lastUpdated: "2026-06-17"
 ---
 
 <!-- AUTO-GENERATED: do not edit below this line (regenerated from game data). -->
@@ -13,12 +13,25 @@ wiki:
 | --- | --- |
 | Role | Zone |
 | Tags | Attack, Projectile, Zone |
+| Unlock level | 8 |
+| Weapon-based | Yes |
+
+**Related skills**
+
+- [Iron Sweep](/skills/iron-sweep/)
+- [Splitshot](/skills/splitshot/)
+- [Execution Rift](/skills/execution-rift/)
+- [Crescent Rain](/skills/crescent-rain/)
+- [Bastion Wave](/skills/bastion-wave/)
+- [Iron Verdict](/skills/iron-verdict/)
+- [Blood Quarry](/skills/blood-quarry/)
+- [Storm Cage](/skills/storm-cage/)
 
 <!-- /AUTO-GENERATED -->
 
 ---
 
-*Auto-generated from the game data. Last updated 2026-06-16. Stats above are generated - edit the game data, not this block.*
+*Auto-generated from the game data. Last updated 2026-06-17. Stats above are generated - edit the game data, not this block.*
 
 
 ## Notes

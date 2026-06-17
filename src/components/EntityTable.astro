@@ -1,0 +1,102 @@
+---
+// Sortable / filterable index table. Rendered fully server-side (works without JS); the client
+// script below only adds sort + filter as progressive enhancement.
+// Props: data = [{ name, slug, ...fields }], base = link prefix, columns = [{ key, label, filter?, numeric? }].
+const { data = [], columns = [], base = '' } = Astro.props;
+const norm = (v) => (v === null || v === undefined ? '' : String(v));
+---
+
+<div class="entity-table" data-entity-table>
+	<div class="entity-table__controls">
+		<input type="search" class="entity-table__search" placeholder="Filter by name..." aria-label="Filter by name" />
+		{columns.filter((c) => c.filter).map((c) => (
+			<select class="entity-table__filter" data-filter-key={c.key} aria-label={`Filter by ${c.label}`}>
+				<option value="">{`All ${c.label}`}</option>
+			</select>
+		))}
+		<span class="entity-table__count" data-count></span>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col" data-key="name" class="is-sortable" aria-sort="none">Name</th>
+				{columns.map((c) => (
+					<th scope="col" data-key={c.key} class="is-sortable" data-numeric={c.numeric ? 'true' : null} aria-sort="none">{c.label}</th>
+				))}
+			</tr>
+		</thead>
+		<tbody>
+			{data.map((row) => (
+				<tr>
+					<td data-key="name"><a href={`${base}${row.slug}/`}>{norm(row.name)}</a></td>
+					{columns.map((c) => (
+						<td data-key={c.key} data-sort={norm(row[c.key])}>{norm(row[c.key]) || '-'}</td>
+					))}
+				</tr>
+			))}
+		</tbody>
+	</table>
+</div>
+
+<script>
+	function initEntityTable(root) {
+		const table = root.querySelector('table');
+		const tbody = table.querySelector('tbody');
+		const rows = Array.from(tbody.querySelectorAll('tr'));
+		const search = root.querySelector('.entity-table__search');
+		const filters = Array.from(root.querySelectorAll('.entity-table__filter'));
+		const countEl = root.querySelector('[data-count]');
+
+		const cellText = (row, key) => {
+			const td = row.querySelector(`td[data-key="${key}"]`);
+			if (!td) return '';
+			return (td.getAttribute('data-sort') ?? td.textContent ?? '').trim();
+		};
+
+		for (const sel of filters) {
+			const key = sel.getAttribute('data-filter-key');
+			const values = new Set();
+			for (const r of rows) { const v = cellText(r, key); if (v) values.add(v); }
+			for (const v of Array.from(values).sort((a, b) => a.localeCompare(b))) {
+				const opt = document.createElement('option');
+				opt.value = v; opt.textContent = v;
+				sel.appendChild(opt);
+			}
+		}
+
+		function apply() {
+			const q = (search.value || '').trim().toLowerCase();
+			const active = filters.map((s) => [s.getAttribute('data-filter-key'), s.value]).filter(([, v]) => v);
+			let shown = 0;
+			for (const r of rows) {
+				let ok = !q || cellText(r, 'name').toLowerCase().includes(q);
+				for (const [k, v] of active) if (ok && cellText(r, k) !== v) ok = false;
+				r.hidden = !ok;
+				if (ok) shown++;
+			}
+			if (countEl) countEl.textContent = `${shown} of ${rows.length}`;
+		}
+
+		let sortKey = null, sortDir = 1;
+		function sortBy(th) {
+			const key = th.getAttribute('data-key');
+			const numeric = th.getAttribute('data-numeric') === 'true';
+			if (sortKey === key) sortDir = -sortDir; else { sortKey = key; sortDir = 1; }
+			const sorted = rows.slice().sort((a, b) => {
+				const av = cellText(a, key), bv = cellText(b, key);
+				if (numeric) return ((parseFloat(av) || 0) - (parseFloat(bv) || 0)) * sortDir;
+				return av.localeCompare(bv) * sortDir;
+			});
+			for (const r of sorted) tbody.appendChild(r);
+			for (const h of table.querySelectorAll('th')) h.setAttribute('aria-sort', 'none');
+			th.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+		}
+
+		for (const th of table.querySelectorAll('th.is-sortable')) th.addEventListener('click', () => sortBy(th));
+		search.addEventListener('input', apply);
+		for (const s of filters) s.addEventListener('change', apply);
+		apply();
+	}
+
+	for (const root of document.querySelectorAll('[data-entity-table]')) initEntityTable(root);
+</script>

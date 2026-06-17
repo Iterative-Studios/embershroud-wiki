@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ashbound Conjurer",
+    "slug": "ashboundconjurer",
+    "rarity": "Common"
+  },
+  {
+    "name": "Beast Brute",
+    "slug": "beastbrute",
+    "rarity": "Common"
+  },
+  {
+    "name": "Demon Caster",
+    "slug": "demoncaster",
+    "rarity": "Common"
+  },
+  {
+    "name": "Hollow Fang",
+    "slug": "boss-hollowfang",
+    "rarity": "Unique / Boss"
+  },
+  {
+    "name": "Ironhold Warden",
+    "slug": "boss-ironholdwarden",
+    "rarity": "Unique / Boss"
+  },
+  {
+    "name": "Orc",
+    "slug": "orc1",
+    "rarity": "Common"
+  },
+  {
+    "name": "Orc Archer",
+    "slug": "orcarcher",
+    "rarity": "Common"
+  },
+  {
+    "name": "Orc Shield Bearer",
+    "slug": "orcshieldbearer",
+    "rarity": "Common"
+  },
+  {
+    "name": "Skeleton Fire Caster",
+    "slug": "skeletoncasterfire",
+    "rarity": "Common"
+  },
+  {
+    "name": "Stormweaver",
+    "slug": "boss-stormweaver",
+    "rarity": "Unique / Boss"
+  },
+  {
+    "name": "Undead Infantry",
+    "slug": "undeadinfantry",
+    "rarity": "Common"
+  },
+  {
+    "name": "Venomous Beast",
+    "slug": "beastvenomous",
+    "rarity": "Common"
+  }
+]

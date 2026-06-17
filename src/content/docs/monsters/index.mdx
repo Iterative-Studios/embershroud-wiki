@@ -1,0 +1,11 @@
+---
+title: Monsters
+description: All monsters in Embershroud - sortable and filterable.
+---
+
+import EntityTable from '../../../components/EntityTable.astro';
+import monsters from '../../../data/wiki/monsters.json';
+
+Every monster currently in the game. Filter by name or rarity, or click a column header to sort.
+
+<EntityTable data={monsters} base="/monsters/" columns={[{ key: 'rarity', label: 'Rarity', filter: true }]} />

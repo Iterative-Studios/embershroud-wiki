@@ -4,7 +4,7 @@ description: "Item"
 wiki:
   generated: true
   entityType: "item"
-  lastUpdated: "2026-06-16"
+  lastUpdated: "2026-06-17"
 ---
 
 <!-- AUTO-GENERATED: do not edit below this line (regenerated from game data). -->
@@ -17,7 +17,7 @@ wiki:
 
 ---
 
-*Auto-generated from the game data. Last updated 2026-06-16. Stats above are generated - edit the game data, not this block.*
+*Auto-generated from the game data. Last updated 2026-06-17. Stats above are generated - edit the game data, not this block.*
 
 
 ## Notes

@@ -79,3 +79,43 @@ h1#_top {
 	color: var(--embershroud-gold);
 	font-style: italic;
 }
+
+/* Glossary tooltips: first occurrence of a known term gets a native hover definition. */
+.glossary-term {
+	text-decoration: underline dotted;
+	text-underline-offset: 0.2em;
+	text-decoration-color: var(--embershroud-gold);
+	cursor: help;
+}
+
+/* Sortable / filterable index tables. */
+.entity-table__controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+	margin-block: 1rem;
+}
+.entity-table__search,
+.entity-table__filter {
+	padding: 0.35rem 0.5rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.375rem;
+	background: var(--sl-color-bg-inline-code, var(--sl-color-black));
+	color: var(--sl-color-white);
+	font: inherit;
+}
+.entity-table__search { min-width: 12rem; }
+.entity-table__count {
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-sm);
+	margin-inline-start: auto;
+}
+.entity-table th.is-sortable {
+	cursor: pointer;
+	user-select: none;
+	white-space: nowrap;
+}
+.entity-table th.is-sortable[aria-sort='ascending']::after { content: ' \25B2'; color: var(--sl-color-accent); }
+.entity-table th.is-sortable[aria-sort='descending']::after { content: ' \25BC'; color: var(--sl-color-accent); }
+.entity-table tbody tr[hidden] { display: none; }

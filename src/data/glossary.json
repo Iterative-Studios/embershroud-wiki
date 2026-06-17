@@ -1,0 +1,7 @@
+{
+  "_comment": "Glossary terms -> short definitions. The FIRST occurrence of each term on a page gets a hover tooltip (native <abbr title>). Keep definitions short and plain. Designers: add game-specific / locked terms here, grounded in the design plan - the mechanism picks them up automatically, no code change. Keys starting with _ are ignored.",
+  "auto-combat": "Combat your character resolves automatically - you shape the build and the plan rather than controlling each action.",
+  "idle game": "A game designed to keep progressing while you are away, rewarding smart setup over constant input.",
+  "build": "The combination of class, skills, items, and choices that defines how your character fights.",
+  "DPS": "Damage per second - a rough measure of sustained offensive output."
+}

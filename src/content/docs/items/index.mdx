@@ -1,0 +1,11 @@
+---
+title: Items
+description: All items in Embershroud - sortable and filterable.
+---
+
+import EntityTable from '../../../components/EntityTable.astro';
+import items from '../../../data/wiki/items.json';
+
+Every item currently in the game. Type in the box to filter by name, use the dropdown to filter by type, or click a column header to sort.
+
+<EntityTable data={items} base="/items/" columns={[{ key: 'itemType', label: 'Type', filter: true }]} />

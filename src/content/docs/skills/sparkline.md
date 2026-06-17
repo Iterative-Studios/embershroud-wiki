@@ -4,7 +4,7 @@ description: "Skill - Sustain"
 wiki:
   generated: true
   entityType: "skill"
-  lastUpdated: "2026-06-16"
+  lastUpdated: "2026-06-17"
 ---
 
 <!-- AUTO-GENERATED: do not edit below this line (regenerated from game data). -->
@@ -13,12 +13,23 @@ wiki:
 | --- | --- |
 | Role | Sustain |
 | Tags | Spell, Chain, Sustain |
+| Unlock level | 1 |
+| Weapon-based | No |
+
+**Related skills**
+
+- [Storm Cage](/skills/storm-cage/)
+- [Arc Halo](/skills/arc-halo/)
+- [Glass Orbit](/skills/glass-orbit/)
+- [Iron Sweep](/skills/iron-sweep/)
+- [Splitshot](/skills/splitshot/)
+- [Aegis Pulse](/skills/aegis-pulse/)
 
 <!-- /AUTO-GENERATED -->
 
 ---
 
-*Auto-generated from the game data. Last updated 2026-06-16. Stats above are generated - edit the game data, not this block.*
+*Auto-generated from the game data. Last updated 2026-06-17. Stats above are generated - edit the game data, not this block.*
 
 
 ## Notes

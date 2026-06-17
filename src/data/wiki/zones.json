@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Arcane Wastes",
+    "slug": "arcane-wastes",
+    "recommendedLevel": 20,
+    "region": "R-SURFACE"
+  },
+  {
+    "name": "Ascent Entry",
+    "slug": "ascent-entry",
+    "recommendedLevel": 50,
+    "region": "R-ASCENT"
+  },
+  {
+    "name": "Ironhold Training Grounds",
+    "slug": "ironhold-training-grounds",
+    "recommendedLevel": 10,
+    "region": "R-SURFACE"
+  },
+  {
+    "name": "Starter Introduction",
+    "slug": "starter-introduction",
+    "recommendedLevel": 1,
+    "region": "R-STARTER"
+  },
+  {
+    "name": "The Mixed Wilds",
+    "slug": "the-mixed-wilds",
+    "recommendedLevel": 30,
+    "region": "R-SURFACE"
+  }
+]

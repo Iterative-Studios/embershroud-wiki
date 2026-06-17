@@ -1,0 +1,11 @@
+---
+title: NPCs
+description: All NPCs in Embershroud.
+---
+
+import EntityTable from '../../../components/EntityTable.astro';
+import npcs from '../../../data/wiki/npcs.json';
+
+The characters you'll meet across Embershroud.
+
+<EntityTable data={npcs} base="/npcs/" columns={[]} />
