@@ -20,14 +20,8 @@ export default defineConfig({
 				// Default to dark theme when the visitor has no stored preference.
 				ThemeProvider: './src/components/ThemeProvider.astro',
 			},
-			// Search-event beacon. The script is a no-op unless WIKI_BEACON_URL is set,
-			// which injects the meta the client reads. Page views are handled by Cloudflare Web Analytics.
-			head: [
-				{ tag: 'script', attrs: { src: '/search-beacon.js', defer: true } },
-				...(process.env.WIKI_BEACON_URL
-					? [{ tag: 'meta', attrs: { name: 'wiki:beacon', content: process.env.WIKI_BEACON_URL } }]
-					: []),
-			],
+			// Visit metrics are handled entirely by Cloudflare Web Analytics (cookieless, privacy-first,
+			// enabled at the Pages project level) - the site ships no custom analytics script.
 			// Reference pages are auto-generated from canonical game data; guides are hand-authored.
 			sidebar: [
 				{ label: 'Embershroud (game site)', link: 'https://embershroud.com' },

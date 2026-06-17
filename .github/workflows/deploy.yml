@@ -29,9 +29,6 @@ jobs:
       - name: Build site
         env:
           WIKI_SITE: https://wiki.embershroud.com
-          # Set the repo variable WIKI_BEACON_URL (Settings -> Variables) to the deployed
-          # search-beacon Worker URL to turn on search analytics. Empty = beacon disabled.
-          WIKI_BEACON_URL: ${{ vars.WIKI_BEACON_URL }}
         run: npm run build
 
       - name: Deploy to Cloudflare Pages

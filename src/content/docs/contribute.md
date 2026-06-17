@@ -50,6 +50,11 @@ The wiki has two layers:
 - Tag build guides with the patch they're for (e.g. "Current for build 0.1.x").
 - Be excellent to each other.
 
+## Privacy
+
+This wiki uses **Cloudflare Web Analytics** for aggregate visit counts only - it is cookieless and
+privacy-first, with no personal tracking, fingerprinting, or ads, and no other analytics.
+
 > Contributions may be edited or removed by maintainers. Human-written guides are published under
 > **CC BY-SA 4.0**; Embershroud game data and assets remain © Iterative Studios. By contributing you
 > grant Iterative Studios a license to publish, edit, and migrate your contribution.
