@@ -16,6 +16,12 @@ export default defineConfig({
 			description:
 				'The official Embershroud reference wiki - items, skills, monsters, zones, and systems.',
 			customCss: ['./src/styles/embershroud.css'],
+			// "Edit page" link -> GitHub's web editor. For a logged-in user this is a fork-and-PR
+			// flow (with a Preview tab) - no custom editor needed. Generated reference blocks are
+			// fenced with AUTO-GENERATED markers and overwritten on regeneration; edit guides + Notes.
+			editLink: {
+				baseUrl: 'https://github.com/Iterative-Studios/embershroud-wiki/edit/main/',
+			},
 			components: {
 				// Default to dark theme when the visitor has no stored preference.
 				ThemeProvider: './src/components/ThemeProvider.astro',

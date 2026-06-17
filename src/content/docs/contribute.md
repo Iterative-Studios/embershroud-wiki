@@ -16,8 +16,10 @@ This is the main path right now and needs no tools or accounts beyond Discord.
 
 ## 2. Open a pull request (for the technical)
 
-The wiki is an open-source static site (Astro Starlight). If you're comfortable with Git/Markdown,
-fork the repo, make your change, and open a **pull request**:
+The wiki is an open-source static site (Astro Starlight). The easiest route: scroll to the bottom of
+any page and click **"Edit page"** - it opens that file in GitHub's web editor (with a Preview tab),
+and saving forks the repo and opens a **pull request** for you. No local setup, just a free GitHub
+account. You can also fork manually if you prefer:
 
 **[github.com/Iterative-Studios/embershroud-wiki](https://github.com/Iterative-Studios/embershroud-wiki)**
 
