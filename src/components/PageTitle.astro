@@ -1,0 +1,38 @@
+---
+// Override of Starlight's PageTitle: prepends a breadcrumb trail, then renders the default title.
+// Only category roots that actually have an index page are linked (so we never emit a broken link
+// the links-validator would reject); other segments and the current page are plain text.
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import { Icon } from 'astro-icon/components';
+
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+const HAS_INDEX = new Set(['items', 'monsters', 'skills', 'zones', 'npcs']);
+const LABELS = { items: 'Items', monsters: 'Monsters', skills: 'Skills', zones: 'Zones', npcs: 'NPCs', systems: 'Systems' };
+const titleCase = (s) => s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+const pageTitle = Astro.locals.starlightRoute?.entry?.data?.title ?? '';
+
+const crumbs = [];
+if (segments.length > 0) {
+	crumbs.push({ label: 'Home', href: '/' });
+	segments.forEach((seg, i) => {
+		if (i === segments.length - 1) {
+			crumbs.push({ label: pageTitle || LABELS[seg] || titleCase(seg) });
+		} else {
+			const label = LABELS[seg] || titleCase(seg);
+			crumbs.push(HAS_INDEX.has(seg) ? { label, href: `/${seg}/` } : { label });
+		}
+	});
+}
+---
+
+{crumbs.length > 1 && (
+	<nav class="breadcrumbs" aria-label="Breadcrumb">
+		{crumbs.map((c, i) => (
+			<Fragment>
+				{i > 0 && <Icon name="lucide:chevron-right" class="breadcrumbs__sep" aria-hidden="true" />}
+				{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}
+			</Fragment>
+		))}
+	</nav>
+)}
+<Default><slot /></Default>

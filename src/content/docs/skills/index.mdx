@@ -1,0 +1,19 @@
+---
+title: Skills
+description: All skills in Embershroud - sortable and filterable.
+---
+
+import EntityTable from '../../../components/EntityTable.astro';
+import skills from '../../../data/wiki/skills.json';
+
+Every skill currently in the game. Filter by name or role, or click a column header to sort (try sorting by unlock level).
+
+<EntityTable
+	data={skills}
+	base="/skills/"
+	columns={[
+		{ key: 'role', label: 'Role', filter: true },
+		{ key: 'tags', label: 'Tags' },
+		{ key: 'unlockLevel', label: 'Unlock level', numeric: true },
+	]}
+/>

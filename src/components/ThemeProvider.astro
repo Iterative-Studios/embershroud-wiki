@@ -1,0 +1,40 @@
+---
+/* Override of Starlight's ThemeProvider to make DARK the default.
+   Starlight's ThemeSelect defaults an unset/auto preference to follow the OS (light on a light OS).
+   On the first visit per browser we force dark (tracked by an init flag, so even visitors who already
+   have an empty "auto" value stored from an earlier build get corrected). An explicit Light/Dark/Auto
+   pick the user makes afterwards still wins and persists. */
+---
+
+<script is:inline>
+	window.StarlightThemeProvider = (() => {
+		const themeKey = 'starlight-theme';
+		const initKey = 'embershroud-theme-init';
+		const ls = typeof localStorage !== 'undefined' ? localStorage : null;
+		if (ls && !ls.getItem(initKey)) {
+			ls.setItem(initKey, '1');
+			ls.setItem(themeKey, 'dark');
+		}
+		const stored = ls ? ls.getItem(themeKey) : null;
+		const systemDark = !window.matchMedia('(prefers-color-scheme: light)').matches;
+		const resolved =
+			stored === 'light' ? 'light' : stored === 'dark' ? 'dark' : systemDark ? 'dark' : 'light';
+		document.documentElement.dataset.theme = resolved;
+		return {
+			updatePickers(theme = stored || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					const tmpl = document.querySelector('#theme-icons');
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script>

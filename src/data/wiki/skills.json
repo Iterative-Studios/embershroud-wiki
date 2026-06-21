@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Aegis Pulse",
+    "slug": "aegis-pulse",
+    "role": "Guard",
+    "tags": "Guard, Barrier, Sustain",
+    "unlockLevel": 1,
+    "weaponBased": false
+  },
+  {
+    "name": "Arc Halo",
+    "slug": "arc-halo",
+    "role": "Burst",
+    "tags": "Spell, Chain, Burst",
+    "unlockLevel": 3,
+    "weaponBased": false
+  },
+  {
+    "name": "Bastion Wave",
+    "slug": "bastion-wave",
+    "role": "Burst",
+    "tags": "Attack, Melee, Burst, Guard",
+    "unlockLevel": 3,
+    "weaponBased": true
+  },
+  {
+    "name": "Blood Quarry",
+    "slug": "blood-quarry",
+    "role": "Burst",
+    "tags": "Attack, Projectile, Mark, Execute",
+    "unlockLevel": 3,
+    "weaponBased": true
+  },
+  {
+    "name": "Crescent Rain",
+    "slug": "crescent-rain",
+    "role": "Zone",
+    "tags": "Attack, Projectile, Zone",
+    "unlockLevel": 12,
+    "weaponBased": true
+  },
+  {
+    "name": "Execution Rift",
+    "slug": "execution-rift",
+    "role": "Burst",
+    "tags": "Attack, Burst, Execute",
+    "unlockLevel": 8,
+    "weaponBased": true
+  },
+  {
+    "name": "Fade Step",
+    "slug": "fade-step",
+    "role": "Guard",
+    "tags": "Melee, Guard, Counter",
+    "unlockLevel": 3,
+    "weaponBased": false
+  },
+  {
+    "name": "Glass Orbit",
+    "slug": "glass-orbit",
+    "role": "Guard",
+    "tags": "Spell, Barrier, Sustain",
+    "unlockLevel": 8,
+    "weaponBased": false
+  },
+  {
+    "name": "Iron Sweep",
+    "slug": "iron-sweep",
+    "role": "Sustain",
+    "tags": "Attack, Melee, Sustain",
+    "unlockLevel": 1,
+    "weaponBased": true
+  },
+  {
+    "name": "Iron Verdict",
+    "slug": "iron-verdict",
+    "role": "Burst",
+    "tags": "Attack, Melee, Execute, Counter",
+    "unlockLevel": 8,
+    "weaponBased": true
+  },
+  {
+    "name": "Snare Volley",
+    "slug": "snare-volley",
+    "role": "Zone",
+    "tags": "Attack, Projectile, Zone",
+    "unlockLevel": 8,
+    "weaponBased": true
+  },
+  {
+    "name": "Sparkline",
+    "slug": "sparkline",
+    "role": "Sustain",
+    "tags": "Spell, Chain, Sustain",
+    "unlockLevel": 1,
+    "weaponBased": false
+  },
+  {
+    "name": "Splitshot",
+    "slug": "splitshot",
+    "role": "Sustain",
+    "tags": "Attack, Projectile, Sustain",
+    "unlockLevel": 1,
+    "weaponBased": true
+  },
+  {
+    "name": "Storm Cage",
+    "slug": "storm-cage",
+    "role": "Burst",
+    "tags": "Spell, Burst, Zone",
+    "unlockLevel": 5,
+    "weaponBased": false
+  }
+]

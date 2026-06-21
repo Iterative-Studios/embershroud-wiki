@@ -1,0 +1,49 @@
+---
+title: Embershroud Wiki
+description: The official reference wiki for Embershroud - an idle / auto-combat ARPG where you build the machine and your character fights it out.
+template: splash
+hero:
+  tagline: Build the machine. Let it fight. The official Embershroud reference.
+  actions:
+    - text: Start here - how combat works
+      link: /systems/combat-basics/
+      icon: right-arrow
+    - text: Join the Discord
+      link: https://discord.gg/8ExSn2CDB2
+      icon: external
+      variant: secondary
+    - text: Contribute
+      link: /contribute/
+      icon: pencil
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## New to Embershroud? Start here
+
+<CardGrid>
+	<LinkCard title="Combat Basics" href="/systems/combat-basics/" description="How auto-combat resolves - the core loop." />
+	<LinkCard title="Classes" href="/systems/classes/" description="Pick a class and the role it plays." />
+	<LinkCard title="The Battle Plan" href="/systems/battle-plan/" description="Set the strategy your character follows." />
+	<LinkCard title="Offline Progress" href="/systems/offline-progress/" description="What happens while you're away." />
+</CardGrid>
+
+## Browse the reference
+
+Auto-generated from the live game data, so stats track the current build. Each section is a sortable, filterable list.
+
+<CardGrid>
+	<LinkCard title="Skills" href="/skills/" description="Every active and weapon skill, by role." />
+	<LinkCard title="Items" href="/items/" description="Weapons, armour, jewelry, and consumables." />
+	<LinkCard title="Monsters" href="/monsters/" description="Enemies and bosses across the zones." />
+	<LinkCard title="Zones" href="/zones/" description="Where to fight, sorted by level." />
+	<LinkCard title="NPCs" href="/npcs/" description="Characters you meet in the world." />
+	<LinkCard title="Systems & Guides" href="/systems/combat-basics/" description="How the game's systems work." />
+</CardGrid>
+
+:::tip[Help build the wiki]
+Anyone can pitch in - fix a stat, write a guide, or share a build. Use the **Edit page** link on any page, open a [pull request](https://github.com/Iterative-Studios/embershroud-wiki), or drop it in the [Discord](https://discord.gg/8ExSn2CDB2). See [how to contribute](/contribute/).
+:::
+
+> Reference content reflects the current public playtest build; numbers can change between patches.

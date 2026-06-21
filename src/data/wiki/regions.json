@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Arcane Wastes",
+    "slug": "arcane-wastes",
+    "sortOrder": 3
+  },
+  {
+    "name": "Ironhold",
+    "slug": "ironhold",
+    "sortOrder": 2
+  },
+  {
+    "name": "Mixed Wilds",
+    "slug": "mixed-wilds",
+    "sortOrder": 4
+  },
+  {
+    "name": "Wayrest",
+    "slug": "wayrest",
+    "sortOrder": 1
+  }
+]

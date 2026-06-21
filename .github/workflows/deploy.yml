@@ -1,0 +1,57 @@
+name: build-and-deploy
+
+# Builds the committed site content and deploys to Cloudflare Pages.
+# main = production; PRs = preview. Requires repo secrets CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build site
+        env:
+          WIKI_SITE: https://wiki.embershroud.com
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx --yes wrangler@3 pages project create embershroud-wiki --production-branch=main 2>/dev/null || echo "project exists, continuing"
+          npx --yes wrangler@3 pages deploy ./dist --project-name=embershroud-wiki --branch="${{ github.head_ref || github.ref_name }}"
+
+      # Attach the custom domain (idempotent). The site is intentionally public and indexable:
+      # permissive public/robots.txt (Allow: /) plus an @astrojs/sitemap-generated sitemap, and no
+      # X-Robots-Tag in public/_headers. To take it out of search later, add `X-Robots-Tag: noindex`
+      # to public/_headers and switch robots.txt to Disallow.
+      - name: Ensure custom domain wiki.embershroud.com
+        if: github.ref == 'refs/heads/main'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/embershroud-wiki/domains" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"name":"wiki.embershroud.com"}' | grep -q '"success":true' \
+            && echo "custom domain attached" || echo "custom domain already present or pending DNS/SSL"

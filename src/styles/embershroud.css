@@ -1,0 +1,136 @@
+/* Embershroud wiki theme - echoes the marketing site: warm near-black, ember-orange accent,
+   gold serif display headings (Cinzel, matching the logo wordmark vibe). */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap');
+
+:root {
+	/* Ember-orange accent (buttons, links, active nav) */
+	--sl-color-accent-low: #4a1a0a;
+	--sl-color-accent: #e8763c;
+	--sl-color-accent-high: #f6c6a3;
+	/* Gold used for display headings / tagline */
+	--embershroud-gold: #d8b07a;
+	--embershroud-ember: #e8763c;
+}
+
+/* Dark is the Embershroud default look: warm near-black with a faint ember floor glow. */
+:root[data-theme='dark'] {
+	--sl-color-accent-low: #4a1a0a;
+	--sl-color-accent: #e8763c;
+	--sl-color-accent-high: #f6c6a3;
+	--sl-color-text-accent: #f08a4f;
+
+	--sl-color-white: #f5ece4;
+	--sl-color-gray-1: #ecddd0;
+	--sl-color-gray-2: #c9b6a7;
+	--sl-color-gray-3: #9c8676;
+	--sl-color-gray-4: #6c5a4d;
+	--sl-color-gray-5: #3f2f25;
+	--sl-color-gray-6: #271a13;
+	--sl-color-gray-7: #1b110c;
+
+	--sl-color-black: #0e0b0a;
+	--sl-color-bg: #0e0b0a;
+	--sl-color-bg-nav: #150f0c;
+	--sl-color-bg-sidebar: #120c09;
+	--sl-color-bg-inline-code: #221610;
+	--sl-color-hairline: #2c1d14;
+	--sl-color-hairline-shade: #1a110c;
+}
+
+/* Light theme keeps the ember accent so brand colour is consistent if a reader toggles. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #f6d8c4;
+	--sl-color-accent: #c2521d;
+	--sl-color-accent-high: #5a2306;
+	--sl-color-text-accent: #c2521d;
+}
+
+/* Faint warm ember glow toward the bottom, like the splash page. */
+:root[data-theme='dark'] body {
+	background-image: radial-gradient(120% 80% at 50% 120%, rgba(232, 118, 60, 0.10), transparent 60%);
+	background-attachment: fixed;
+}
+
+/* Fantasy serif display for the brand + page headings. */
+.site-title {
+	font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	color: var(--embershroud-gold);
+	text-transform: uppercase;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.content-panel h1,
+h1#_top {
+	font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+	letter-spacing: 0.02em;
+}
+
+/* Splash hero (home page): gold serif tagline like the site. */
+.hero h1 {
+	font-family: 'Cinzel', Georgia, serif;
+	color: var(--embershroud-gold);
+}
+.hero .tagline {
+	color: var(--embershroud-gold);
+	font-style: italic;
+}
+
+/* Glossary tooltips: first occurrence of a known term gets a native hover definition. */
+.glossary-term {
+	text-decoration: underline dotted;
+	text-underline-offset: 0.2em;
+	text-decoration-color: var(--embershroud-gold);
+	cursor: help;
+}
+
+/* Sortable / filterable index tables. */
+.entity-table__controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+	margin-block: 1rem;
+}
+.entity-table__search,
+.entity-table__filter {
+	padding: 0.35rem 0.5rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.375rem;
+	background: var(--sl-color-bg-inline-code, var(--sl-color-black));
+	color: var(--sl-color-white);
+	font: inherit;
+}
+.entity-table__search { min-width: 12rem; }
+.entity-table__count {
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-sm);
+	margin-inline-start: auto;
+}
+.entity-table th.is-sortable {
+	cursor: pointer;
+	user-select: none;
+	white-space: nowrap;
+}
+.entity-table th.is-sortable[aria-sort='ascending']::after { content: ' \25B2'; color: var(--sl-color-accent); }
+.entity-table th.is-sortable[aria-sort='descending']::after { content: ' \25BC'; color: var(--sl-color-accent); }
+.entity-table tbody tr[hidden] { display: none; }
+
+/* Breadcrumb trail above page titles. */
+.breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	margin-bottom: 0.5rem;
+}
+.breadcrumbs a { color: var(--sl-color-gray-2); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--sl-color-text-accent); text-decoration: underline; }
+.breadcrumbs [aria-current='page'] { color: var(--sl-color-white); }
+.breadcrumbs__sep { width: 0.9em; height: 0.9em; opacity: 0.55; }

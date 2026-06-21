@@ -1,0 +1,17 @@
+---
+title: Regions
+description: All regions in Embershroud - each groups its zones into a level band.
+---
+
+import EntityTable from '../../../components/EntityTable.astro';
+import regions from '../../../data/wiki/regions.json';
+
+Every region groups a run of narrow zones into one level band. Open a region to see its zones, their level ranges, and its milestone boss.
+
+<EntityTable
+	data={regions}
+	base="/regions/"
+	columns={[
+		{ key: 'sortOrder', label: 'Order', numeric: true },
+	]}
+/>

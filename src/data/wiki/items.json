@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Breast Plate",
+    "slug": "breastplate",
+    "itemType": "Heavy Chest"
+  },
+  {
+    "name": "Buckler",
+    "slug": "buckler",
+    "itemType": "Shield"
+  },
+  {
+    "name": "Cap",
+    "slug": "cap",
+    "itemType": "Medium Helmet"
+  },
+  {
+    "name": "Crystal Amulet",
+    "slug": "crystalamulet",
+    "itemType": "Amulet"
+  },
+  {
+    "name": "Gold Ring",
+    "slug": "goldring",
+    "itemType": "Ring"
+  },
+  {
+    "name": "Hand Axe",
+    "slug": "handaxe",
+    "itemType": "One-handed Axe"
+  },
+  {
+    "name": "Helm",
+    "slug": "helm",
+    "itemType": "Heavy Helmet"
+  },
+  {
+    "name": "Hood",
+    "slug": "hood",
+    "itemType": "Light Helmet"
+  },
+  {
+    "name": "Leather Armor",
+    "slug": "leatherarmor",
+    "itemType": "Medium Chest"
+  },
+  {
+    "name": "Leather Boots",
+    "slug": "leatherboots",
+    "itemType": "Medium Boots"
+  },
+  {
+    "name": "Leather Gloves",
+    "slug": "leathergloves",
+    "itemType": "Medium Gloves"
+  },
+  {
+    "name": "Light Gauntlets",
+    "slug": "lightgauntlets",
+    "itemType": "Heavy Gloves"
+  },
+  {
+    "name": "Light Plated Boots",
+    "slug": "lightplatedboots",
+    "itemType": "Heavy Boots"
+  },
+  {
+    "name": "Mending Potion (Tier 1)",
+    "slug": "mendingpotion-t1",
+    "itemType": "Potion"
+  },
+  {
+    "name": "Mending Potion (Tier 2)",
+    "slug": "mendingpotion-t2",
+    "itemType": "Potion"
+  },
+  {
+    "name": "Mending Potion (Tier 3)",
+    "slug": "mendingpotion-t3",
+    "itemType": "Potion"
+  },
+  {
+    "name": "Mending Potion (Tier 4)",
+    "slug": "mendingpotion-t4",
+    "itemType": "Potion"
+  },
+  {
+    "name": "Robe",
+    "slug": "robe",
+    "itemType": "Light Chest"
+  },
+  {
+    "name": "Ruby staff",
+    "slug": "rubystaff",
+    "itemType": "Two-Handed Staff"
+  },
+  {
+    "name": "Ruby Wand",
+    "slug": "rubywand",
+    "itemType": "One-Handed Wand"
+  },
+  {
+    "name": "Sash",
+    "slug": "sash",
+    "itemType": "Belt"
+  },
+  {
+    "name": "Short Sword",
+    "slug": "shortsword",
+    "itemType": "One-handed Sword"
+  },
+  {
+    "name": "Shortbow",
+    "slug": "shortbow",
+    "itemType": "Two-Handed Bow"
+  },
+  {
+    "name": "Simple Gloves",
+    "slug": "simplegloves",
+    "itemType": "Light Gloves"
+  },
+  {
+    "name": "Tome of Wisdom",
+    "slug": "tome1",
+    "itemType": "One-Handed Tome"
+  },
+  {
+    "name": "Wooden Arrows",
+    "slug": "woodenarrows",
+    "itemType": "Arrows"
+  },
+  {
+    "name": "Woven Slippers",
+    "slug": "wovenslippers",
+    "itemType": "Light Boots"
+  }
+]

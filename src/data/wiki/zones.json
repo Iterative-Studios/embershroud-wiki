@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Arcane Core",
+    "slug": "arcane-core",
+    "recommendedLevel": 26,
+    "levelMin": 26,
+    "levelMax": 30,
+    "levelRange": "Levels 26–30",
+    "region": "Arcane Wastes"
+  },
+  {
+    "name": "Arcane Outer Wastes",
+    "slug": "arcane-outer-wastes",
+    "recommendedLevel": 20,
+    "levelMin": 20,
+    "levelMax": 23,
+    "levelRange": "Levels 20–23",
+    "region": "Arcane Wastes"
+  },
+  {
+    "name": "Arcane Veilscar",
+    "slug": "arcane-veilscar",
+    "recommendedLevel": 23,
+    "levelMin": 23,
+    "levelMax": 26,
+    "levelRange": "Levels 23–26",
+    "region": "Arcane Wastes"
+  },
+  {
+    "name": "Ascent Entry",
+    "slug": "ascent-entry",
+    "recommendedLevel": 50,
+    "levelMin": 49,
+    "levelMax": 54,
+    "levelRange": "Levels 49–54",
+    "region": "R-ASCENT"
+  },
+  {
+    "name": "Ironhold Barracks",
+    "slug": "ironhold-barracks",
+    "recommendedLevel": 13,
+    "levelMin": 13,
+    "levelMax": 16,
+    "levelRange": "Levels 13–16",
+    "region": "Ironhold"
+  },
+  {
+    "name": "Ironhold Gate",
+    "slug": "ironhold-gate",
+    "recommendedLevel": 16,
+    "levelMin": 16,
+    "levelMax": 20,
+    "levelRange": "Levels 16–20",
+    "region": "Ironhold"
+  },
+  {
+    "name": "Ironhold Outskirts",
+    "slug": "ironhold-outskirts",
+    "recommendedLevel": 10,
+    "levelMin": 10,
+    "levelMax": 13,
+    "levelRange": "Levels 10–13",
+    "region": "Ironhold"
+  },
+  {
+    "name": "Wayrest Commons",
+    "slug": "wayrest-commons",
+    "recommendedLevel": 1,
+    "levelMin": 1,
+    "levelMax": 5,
+    "levelRange": "Levels 1–5",
+    "region": "Wayrest"
+  },
+  {
+    "name": "Wayrest Reach",
+    "slug": "wayrest-reach",
+    "recommendedLevel": 5,
+    "levelMin": 5,
+    "levelMax": 10,
+    "levelRange": "Levels 5–10",
+    "region": "Wayrest"
+  },
+  {
+    "name": "Wilds Deepwood",
+    "slug": "wilds-deepwood",
+    "recommendedLevel": 34,
+    "levelMin": 34,
+    "levelMax": 40,
+    "levelRange": "Levels 34–40",
+    "region": "Mixed Wilds"
+  },
+  {
+    "name": "Wilds Fringe",
+    "slug": "wilds-fringe",
+    "recommendedLevel": 30,
+    "levelMin": 30,
+    "levelMax": 34,
+    "levelRange": "Levels 30–34",
+    "region": "Mixed Wilds"
+  }
+]
